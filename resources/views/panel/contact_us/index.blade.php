@@ -67,7 +67,7 @@
                 </tbody>
             </table>
 
-            {{ $contacts->appends(['seen' => request('seen')])->links() }}
+            {{ $contacts->appends(['seen' => request('seen')])->links("pagination::bootstrap-4") }}
 
         </div>
     </div>

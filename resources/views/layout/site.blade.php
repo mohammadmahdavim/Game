@@ -34,7 +34,7 @@
                 <div class="col-xl-2 col-lg-2 col-md-3 col-sm-4 col-9">
                     <!-- Logo -->
                     <div class="logo">
-                        <a href="index.html">
+                        <a href="/">
                             <img src="site/img/logo.png" data-rjs="2" alt="VPNet">
                         </a>
                     </div>
@@ -44,12 +44,13 @@
                         <!-- Header-menu -->
                         <div class="header-menu">
                             <ul>
-                                <li><a href="index.html">Home</a></li>
+                                <li><a href="/">Home</a></li>
                                 <li><a href="/services">Services</a></li>
-                                <li><a href="/how_we_work">How we work</a></li>
+                                <li><a href="/how-we-work">How we work</a></li>
                                 <li><a href="/portfolio">Portfolio</a></li>
-                                <li><a href="/about_us">About Us</a></li>
-                                <li><a href="/contatc_us">Contact Us</a></li>
+                                <li><a href="/about-us">About Us</a></li>
+                                <li><a href="/contact-us">Contact Us</a></li>
+                                <li><a href="/faqs">FAQs</a></li>
                             </ul>
                         </div>
                         <!-- End of Header-menu -->

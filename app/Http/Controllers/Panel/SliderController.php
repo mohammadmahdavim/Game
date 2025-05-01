@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Panel;
 
 use App\Http\Controllers\Controller;
+use App\Models\Intro;
 use App\Models\Slider;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\File;
@@ -47,6 +48,30 @@ class SliderController extends Controller
         $slider->save();
 
         return back()->with('success', 'Slider updated successfully.');
+    }
+
+    public function intro_edit()
+    {
+        $intro = Intro::first();
+        return view('panel.intro.edit', compact('intro'));
+    }
+
+    public function intro_update(Request $request)
+    {
+        $slider = Intro::first();
+
+        $validated = $request->validate([
+            'description' => 'required|string',
+        ]);
+
+
+        $slider->update([
+            'description' => $validated['description'],
+        ]);
+
+        $slider->save();
+
+        return back()->with('success', 'Intro updated successfully.');
     }
 }
 

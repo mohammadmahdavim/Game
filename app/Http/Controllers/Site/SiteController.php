@@ -7,9 +7,11 @@ use App\Models\AboutUs;
 use App\Models\ContactUs;
 use App\Models\Faq;
 use App\Models\HowWeWork;
+use App\Models\Intro;
 use App\Models\Portfolio;
 use App\Models\Service;
 use App\Models\Slider;
+use App\Models\Testimonial;
 use Illuminate\Http\Request;
 
 class SiteController extends Controller
@@ -18,10 +20,12 @@ class SiteController extends Controller
     {
         $slider = Slider::first();
         $services = Service::latest()->get();
+        $testimonials = Testimonial::latest()->where('is_active',true)->get();
         $portfolios = Portfolio::latest()->get();
-        $faqs = Faq::latest()->get();
+        $faqs = Faq::latest()->where('is_active',true)->orderBy('order','asc')->get();
         $aboutUs = AboutUs::first();
         $howWeWork = HowWeWork::first();
+        $intro = Intro::first();
 
         return view('site.index', compact(
             'slider',
@@ -29,7 +33,9 @@ class SiteController extends Controller
             'portfolios',
             'faqs',
             'aboutUs',
-            'howWeWork'
+            'testimonials',
+            'howWeWork',
+            'intro'
         ));
     }
 

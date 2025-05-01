@@ -43,11 +43,13 @@ Route::post('logout', [LoginController::class, 'logout'])->name('logout');
 Route::controller(SiteController::class)->group(function () {
     Route::get('/', 'index')->name('site.index');
     Route::get('/services', 'services')->name('site.services');
+    Route::get('/portfolio', 'portfolios')->name('site.portfolio');
+    Route::get('/faqs', 'faqs')->name('site.faqs');
     Route::get('/portfolios', 'portfolios')->name('site.portfolios');
     Route::get('/services/{id}', 'service')->name('site.service');
     Route::get('/faqs', 'faqs')->name('site.faqs');
     Route::get('/contact-us', 'contact_us')->name('site.contact_us');
-    Route::post('/contact-us', 'store_contact_us')->name('site.store_contact_us');
+    Route::post('/contact_us', 'store_contact_us')->name('site.store_contact_us');
     Route::get('/about-us', 'about_us')->name('site.about_us');
     Route::get('/how-we-work', 'how_we_work')->name('site.how_we_work');
 });
@@ -56,6 +58,7 @@ Route::controller(SiteController::class)->group(function () {
 Route::middleware('auth')->prefix('panel')->name('panel.')->group(function () {
     Route::get('profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::put('profile', [ProfileController::class, 'update'])->name('profile.update');
+    Route::get('/', [ServiceController::class, 'index']);
     Route::resource('services', ServiceController::class);
     Route::resource('portfolios', PortfolioController::class);
     Route::resource('faqs', FaqController::class);
@@ -69,4 +72,6 @@ Route::middleware('auth')->prefix('panel')->name('panel.')->group(function () {
     Route::patch('contact_us/{contact}/seen', [ContactUsController::class, 'markAsSeen'])->name('contact_us.seen');
     Route::get('slider', [SliderController::class, 'edit'])->name('slider.edit');
     Route::put('slider', [SliderController::class, 'update'])->name('slider.update');
+    Route::get('intro', [SliderController::class, 'intro_edit'])->name('intro.edit');
+    Route::put('intro', [SliderController::class, 'intro_update'])->name('intro.update');
 });
