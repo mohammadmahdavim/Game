@@ -32,7 +32,7 @@ class TestimonialController extends Controller
         if ($request->hasFile('image')) {
             $image = $request->file('image');
             $filename = time() . '_' . $image->getClientOriginalName();
-            $image->move(public_path('uploads/testimonials'), $filename);
+            $image->move(base_path('../public_html/uploads/testimonials'), $filename);
             $validated['image'] = 'uploads/testimonials/' . $filename;
         }
 
@@ -63,7 +63,7 @@ class TestimonialController extends Controller
         if ($request->hasFile('image')) {
             $image = $request->file('image');
             $filename = time() . '_' . $image->getClientOriginalName();
-            $image->move(public_path('uploads/testimonials'), $filename);
+            $image->move(base_path('../public_html/uploads/testimonials'), $filename);
             $validated['image'] = 'uploads/testimonials/' . $filename;
         }
 

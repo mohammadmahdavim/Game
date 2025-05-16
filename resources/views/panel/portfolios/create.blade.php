@@ -24,9 +24,13 @@
 
                 <div class="mb-3">
                     <label class="form-label">Description</label>
-                    <textarea name="description" class="form-control">{{ old('description', $portfolio->description ?? '') }}</textarea>
+                    <textarea name="description" id="editor" class="form-control">{{ old('description', $portfolio->description ?? '') }}</textarea>
                 </div>
 
+                <div class="mb-3">
+                    <label class="form-label">Link_title</label>
+                    <input type="text" name="link_title" class="form-control" value="{{ old('link_title', $portfolio->link_title ?? '') }}">
+                </div>
                 <div class="mb-3">
                     <label class="form-label">Link</label>
                     <input type="url" name="link" class="form-control" value="{{ old('link', $portfolio->link ?? '') }}">

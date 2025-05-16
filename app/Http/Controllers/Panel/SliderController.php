@@ -35,7 +35,7 @@ class SliderController extends Controller
             $file = $request->file('image');
             $filename = 'slider_' . time() . '.' . $file->getClientOriginalExtension();
             $path = 'uploads/slider/' . $filename;
-            $file->move(public_path('uploads/slider'), $filename);
+            $file->move(base_path('../public_html/uploads/slider'), $filename);
 
             $slider->image = $path;
         }

@@ -31,7 +31,7 @@ class AboutUsController extends Controller
         if ($request->hasFile('image')) {
             $image = $request->file('image');
             $filename = time() . '_' . $image->getClientOriginalName();
-            $image->move(public_path('uploads/about_us'), $filename);
+            $image->move($destination = base_path('../public_html/uploads/about_us'), $filename);
             $validated['image'] = 'uploads/about_us/' . $filename;
         }
 

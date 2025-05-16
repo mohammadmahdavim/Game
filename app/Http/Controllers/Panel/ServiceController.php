@@ -25,8 +25,14 @@ class ServiceController extends Controller
             'title' => 'required|string|max:255',
             'little_description' => 'required|string|max:255',
             'description' => 'required|string',
-            'icon' => 'nullable|string|max:255',
+            'icon' => 'nullable',
         ]);
+        if ($request->hasFile('icon')) {
+            $icon = $request->file('icon');
+            $filename = time() . '_' . $icon->getClientOriginalName();
+            $icon->move(base_path('../public_html/uploads/services'), $filename);
+            $validated['icon'] = 'uploads/services/' . $filename;
+        }
 
         Service::create($validated);
 
@@ -49,9 +55,14 @@ class ServiceController extends Controller
             'title' => 'required|string|max:255',
             'little_description' => 'required|string|max:255',
             'description' => 'required|string',
-            'icon' => 'nullable|string|max:255',
+            'icon' => 'nullable',
         ]);
-
+        if ($request->hasFile('icon')) {
+            $icon = $request->file('icon');
+            $filename = time() . '_' . $icon->getClientOriginalName();
+            $icon->move(base_path('../public_html/uploads/services'), $filename);
+            $validated['icon'] = 'uploads/services/' . $filename;
+        }
         $service->update($validated);
 
         return redirect()->route('panel.services.index')->with('success', 'Service updated!');

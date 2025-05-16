@@ -27,12 +27,13 @@ class PortfolioController extends Controller
             'description' => 'required|string',
             'image' => 'nullable|image',
             'link' => 'nullable|url',
+            'link_title' => 'nullable|string',
         ]);
 
         if ($request->hasFile('image')) {
             $image = $request->file('image');
             $filename = time() . '_' . $image->getClientOriginalName();
-            $image->move(public_path('uploads/portfolios'), $filename);
+            $image->move($destination = base_path('../public_html/uploads/portfolios'), $filename);
             $validated['image'] = 'uploads/portfolios/' . $filename;
         }
 
@@ -58,12 +59,13 @@ class PortfolioController extends Controller
             'description' => 'required|string',
             'image' => 'nullable|image',
             'link' => 'nullable|url',
+            'link_title' => 'nullable|string',
         ]);
 
         if ($request->hasFile('image')) {
             $image = $request->file('image');
             $filename = time() . '_' . $image->getClientOriginalName();
-            $image->move(public_path('uploads/portfolios'), $filename);
+            $image->move($destination = base_path('../public_html/uploads/portfolios'), $filename);
             $validated['image'] = 'uploads/portfolios/' . $filename;
         }
 

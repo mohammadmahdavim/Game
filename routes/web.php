@@ -43,7 +43,10 @@ Route::post('logout', [LoginController::class, 'logout'])->name('logout');
 Route::controller(SiteController::class)->group(function () {
     Route::get('/', 'index')->name('site.index');
     Route::get('/services', 'services')->name('site.services');
+    Route::get('/service/{id}', 'service')->name('site.service');
     Route::get('/portfolio', 'portfolios')->name('site.portfolio');
+    Route::get('/portfolio/{id}', 'portfolio')->name('site.portfolio');
+
     Route::get('/faqs', 'faqs')->name('site.faqs');
     Route::get('/portfolios', 'portfolios')->name('site.portfolios');
     Route::get('/services/{id}', 'service')->name('site.service');

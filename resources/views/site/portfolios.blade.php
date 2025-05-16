@@ -1,4 +1,42 @@
 @extends('layout.site')
+<style>
+    .service-icon-img {
+        width: 42px;
+        height: 42px;
+        object-fit: contain;
+        border-radius: 6px;
+    }
+
+    .service-card {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        padding: 30px 20px;
+        background: #fff;
+        border-radius: 10px;
+        transition: all 0.3s ease;
+        text-decoration: none;
+        color: inherit;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+        height: 100%;
+    }
+
+    .service-card:hover {
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+        transform: translateY(-5px);
+        color: #007bff;
+    }
+
+    .service-icon i {
+        color: #007bff;
+        transition: color 0.3s;
+    }
+
+    .service-card:hover .service-icon i {
+        color: #0056b3;
+    }
+</style>
+
 @section('content')
     <!-- Page Title -->
     <section class="page-title-wrap" data-rjs="2">
@@ -18,32 +56,37 @@
     </section>
     <!-- End of Page Title -->
 
-    <!-- Services -->
+
+    @php
+        $count = count($portfolios);
+        $columns =  3;
+        $colClass = 'col-lg-' . (12 / $columns) . ' col-sm-6';
+    @endphp
+
+
+
     <section class="pt-120 pb-90">
         <div class="container">
             <div class="row">
-                @foreach($portfolios  as $service)
+                @foreach($portfolios as $service)
+                    <div class="{{ $colClass }} my-3">
+                        <a href="/portfolio/{{$service->id}}" class="single-service text-center service-card"
+                           data-animate="fadeInUp" data-delay=".1">
+                            <div class="service-icon mb-3">
+                                <img style="width: 550!important;height: 228!important;"
+                                     @if($service->image)
+                                         src="{{ asset($service->image)}}"
+                                     @else src="site/img/products/product3.jpg"
+                                     @endif data-rjs="2" alt="">
+                            </div>
 
-                    <div class="col-sm-6">
-                        <div class="single-product mb-55" data-animate="fadeInUp" data-delay=".1">
-
-                            <img width="550" height="448" @if($service->image) src="{{ asset($service->image)}}"
-                                 @else src="site/img/products/product3.jpg" @endif data-rjs="2" alt="">
-                            <br>
-                            <h4>{{$service->title}}</h4>
-                            <br>
-                            <span>{{$service->short_description}}</span>
-                            <br>
-                            <a href="#"> More <i class="fa fa-angle-right"></i></a>
-
-                        </div>
+                            <h4>{{ $service->title }}</h4>
+                            <p>{{ $service->short_description }}</p>
+                        </a>
                     </div>
-
                 @endforeach
-
             </div>
         </div>
     </section>
-    <!-- End of Services -->
 
 @endsection

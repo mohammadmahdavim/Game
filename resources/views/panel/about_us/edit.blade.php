@@ -17,7 +17,7 @@
 
                 <div class="mb-3">
                     <label class="form-label">Description</label>
-                    <textarea name="description" class="form-control">{{ old('description', $aboutUs->description) }}</textarea>
+                    <textarea name="description" class="form-control" id="editor">{{ old('description', $aboutUs->description) }}</textarea>
                 </div>
 
                 <div class="mb-3">

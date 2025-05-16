@@ -1,4 +1,43 @@
 @extends('layout.site')
+
+<style>
+    .service-icon-img {
+        width: 200px;
+        height: 100px;
+        object-fit: contain;
+        border-radius: 6px;
+    }
+
+    .service-card {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        padding: 30px 20px;
+        background: #fff;
+        border-radius: 10px;
+        transition: all 0.3s ease;
+        text-decoration: none;
+        color: inherit;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+        height: 100%;
+    }
+
+    .service-card:hover {
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+        transform: translateY(-5px);
+        color: #007bff;
+    }
+
+    .service-icon i {
+        color: #007bff;
+        transition: color 0.3s;
+    }
+
+    .service-card:hover .service-icon i {
+        color: #0056b3;
+    }
+</style>
+
 @section('content')
     <!-- Page Title -->
     <section class="page-title-wrap" data-rjs="2">
@@ -19,23 +58,36 @@
     <!-- End of Page Title -->
 
     <!-- Services -->
+    @php
+        $count = count($services);
+        $columns = ($count % 4 === 0) ? 4 : 3;
+        $colClass = 'col-lg-' . (12 / $columns) . ' col-sm-6';
+    @endphp
+
+
+
     <section class="pt-120 pb-90">
         <div class="container">
             <div class="row">
                 @foreach($services as $service)
-                    <div class="col-lg-3 col-sm-6">
-                        <div class="single-service text-center" data-animate="fadeInUp" data-delay=".1">
-                            <h4>{{$service->title}}</h4>
-                            <p>{{$service->little_description}}</p>
-                            <a href="#"> More <i class="fa fa-angle-right"></i></a>
-                        </div>
+                    <div class="{{ $colClass }} my-3">
+                        <a href="/service/{{$service->id}}" class="single-service text-center service-card"
+                           data-animate="fadeInUp" data-delay=".1">
+                            <div class="service-icon mb-3">
+                                @if($service->icon)
+                                    <img src="{{ $service->icon }}" class="service-icon-img" alt="{{ $service->title }}">
+                                @else
+                                    <i class="fa fa-cogs fa-2x"></i>
+                                @endif
+                            </div>
+
+                            <h4>{{ $service->title }}</h4>
+                            <p>{{ $service->little_description }}</p>
+                        </a>
                     </div>
-
                 @endforeach
-
             </div>
         </div>
     </section>
-    <!-- End of Services -->
 
 @endsection

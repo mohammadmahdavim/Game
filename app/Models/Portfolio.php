@@ -18,6 +18,7 @@ class Portfolio extends Model
         'description',
         'image',
         'link',
+        'link_title'
     ];
 
     // ساخت slug به‌صورت خودکار هنگام ذخیره

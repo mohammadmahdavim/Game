@@ -31,7 +31,7 @@ class HowWeWorkController extends Controller
         if ($request->hasFile('image')) {
             $image = $request->file('image');
             $filename = time() . '_' . $image->getClientOriginalName();
-            $image->move(public_path('uploads/how_we_work'), $filename);
+            $image->move(base_path('../public_html/uploads/how_we_work'), $filename);
             $validated['image'] = 'uploads/how_we_work/' . $filename;
         }
 

@@ -8,18 +8,18 @@
     <title>Site Title</title>
 
     <!-- Favicon -->
-    <link rel="shortcut icon" type="image/png" href="site/favicon.png">
+    <link rel="shortcut icon" type="image/png" href="/site/favicon.png">
 
     <!-- CSS Files -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Rubik:400,500,700%7CSource+Sans+Pro:300i,400,400i,600,700">
-    <link rel="stylesheet" href="site/css/bootstrap.min.css">
-    <link rel="stylesheet" href="site/css/font-awesome.min.css">
-    <link rel="stylesheet" href="site/plugins/swiper/swiper.min.css">
-    <link rel="stylesheet" href="site/plugins/magnific-popup/magnific-popup.min.css">
-    <link rel="stylesheet" href="site/css/style.css">
-    <link rel="stylesheet" href="site/css/responsive.css">
-    <link rel="stylesheet" href="site/css/colors/theme-color-1.css">
-    <link rel="stylesheet" href="site/css/custom.css">
+    <link rel="stylesheet" href="/site/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/site/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/site/plugins/swiper/swiper.min.css">
+    <link rel="stylesheet" href="/site/plugins/magnific-popup/magnific-popup.min.css">
+    <link rel="stylesheet" href="/site/css/style.css">
+    <link rel="stylesheet" href="/site/css/responsive.css">
+    <link rel="stylesheet" href="/site/css/colors/theme-color-1.css">
+    <link rel="stylesheet" href="/site/css/custom.css">
 </head>
 
 <body>
@@ -35,7 +35,7 @@
                     <!-- Logo -->
                     <div class="logo">
                         <a href="/">
-                            <img src="site/img/logo.png" data-rjs="2" alt="VPNet">
+                            <img src="/site/img/logo.png" data-rjs="2" alt="VPNet">
                         </a>
                     </div>
                 </div>
@@ -59,8 +59,7 @@
                 <div class="col-xl-2 col-lg-2 col-md-4 col-sm-6 d-none d-sm-block">
                     <!-- Header Call -->
                     <div class="header-call text-right">
-                        <span>Call Now</span>
-                        <a href="tel:+1234567890">(+1) 234-567-8900</a>
+                       <a href="/contact-us"> <span>Contact Us</span> </a>
                     </div>
                 </div>
             </div>
@@ -197,17 +196,17 @@
 </div>
 
 <!-- JS Files -->
-<script src="site/js/jquery-3.3.1.min.js"></script>
-<script src="site/js/bootstrap.bundle.min.js"></script>
-<script src="site/plugins/waypoints/jquery.waypoints.min.js"></script>
-<script src="site/plugins/waypoints/sticky.min.js"></script>
-<script src="site/plugins/swiper/swiper.min.js"></script>
-<script src="site/plugins/magnific-popup/jquery.magnific-popup.min.js"></script>
-<script src="site/plugins/parsley/parsley.min.js"></script>
-<script src="site/plugins/retinajs/retina.min.js"></script>
-<script src="site/plugins/isotope/isotope.pkgd.min.js"></script>
-<script src="site/js/menu.min.js"></script>
-<script src="site/js/scripts.js"></script>
-<script src="site/js/custom.js"></script>
+<script src="/site/js/jquery-3.3.1.min.js"></script>
+<script src="/site/js/bootstrap.bundle.min.js"></script>
+<script src="/site/plugins/waypoints/jquery.waypoints.min.js"></script>
+<script src="/site/plugins/waypoints/sticky.min.js"></script>
+<script src="/site/plugins/swiper/swiper.min.js"></script>
+<script src="/site/plugins/magnific-popup/jquery.magnific-popup.min.js"></script>
+<script src="/site/plugins/parsley/parsley.min.js"></script>
+<script src="/site/plugins/retinajs/retina.min.js"></script>
+<script src="/site/plugins/isotope/isotope.pkgd.min.js"></script>
+<script src="/site/js/menu.min.js"></script>
+<script src="/site/js/scripts.js"></script>
+<script src="/site/js/custom.js"></script>
 </body>
 </html>

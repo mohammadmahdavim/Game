@@ -51,6 +51,11 @@ class SiteController extends Controller
         return view('site.portfolios', compact('portfolios'));
     }
 
+    public function portfolio($id)
+    {
+        $portfolio = Portfolio::findOrFail($id);
+        return view('site.portfolio', compact('portfolio'));
+    }
     public function service($id)
     {
         $service = Service::findOrFail($id);
