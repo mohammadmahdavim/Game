@@ -51,14 +51,14 @@ We may release future updates so it will overwrite this file. it's better and sa
         });
 
         var mainHeader = $('.main-header');
-        
+
         if(mainHeader.length) {
             var sticky = new Waypoint.Sticky({
                 element: mainHeader[0]
             });
         }
 
-        
+
         /* 02: Background image
         ==============================================*/
 
@@ -77,13 +77,13 @@ We may release future updates so it will overwrite this file. it's better and sa
 
         /* 04: Smooth scroll for comment reply
         ==============================================*/
-        
+
         var $commentContent = $('.comment-content > a');
-        
+
         $commentContent.on('click', function(event){
             event.preventDefault();
             var $target = $('.comment-form');
-            
+
             if ( $target.length ) {
                 $('html, body').animate({
                     scrollTop: $target.offset().top - 120
@@ -93,10 +93,10 @@ We may release future updates so it will overwrite this file. it's better and sa
             }
         });
 
-        
+
         /* 05: Main slider
         ==============================================*/
-        
+
         var mainSlider = new Swiper('.main-slider', {
             loop: true,
             spaceBetween: 1,
@@ -138,10 +138,10 @@ We may release future updates so it will overwrite this file. it's better and sa
             });
         });
 
-        
+
         /* 06: Review slider
         ==============================================*/
-        
+
         var reviewSlider = new Swiper('.review-slider', {
             slidesPerView: 2,
             spaceBetween: 30,
@@ -161,11 +161,30 @@ We may release future updates so it will overwrite this file. it's better and sa
                 }
             }
         });
+        var reviewSlider3 = new Swiper('.review-slider3', {
+            slidesPerView: 3,
+            spaceBetween: 30,
+            speed: 500,
+            autoplay: {
+                delay: 5000,
+                disableOnInteraction: true,
+            },
+            navigation: {
+                nextEl: '.next-review',
+                prevEl: '.prev-review',
+            },
+            breakpoints: {
+                // when window width is <= 991px
+                991: {
+                    slidesPerView: 1
+                }
+            }
+        });
 
-        
+
         /* 07: News slider
         ==============================================*/
-        
+
         var reviewSlider = new Swiper('.news-slider', {
             slidesPerView: 3,
             spaceBetween: 30,
@@ -190,10 +209,10 @@ We may release future updates so it will overwrite this file. it's better and sa
             }
         });
 
-        
+
         /* 08: Product Carousel
         ==============================================*/
-        
+
         var reviewSlider = new Swiper('.product-carousel', {
             slidesPerView: 4,
             spaceBetween: 30,
@@ -222,7 +241,7 @@ We may release future updates so it will overwrite this file. it's better and sa
             }
         });
 
-        
+
         /* 09: Single Product slider
         ==============================================*/
         var $productGallery = $('.product-gallery'),
@@ -252,8 +271,8 @@ We may release future updates so it will overwrite this file. it's better and sa
                 $t.addClass('active').siblings().removeClass('active');
             });
         }
-        
-        
+
+
         /* 10: Video popup
         ==============================================*/
 
@@ -265,7 +284,7 @@ We may release future updates so it will overwrite this file. it's better and sa
             });
         }
 
-        
+
         /* 11: Google map
         ==============================================*/
 
@@ -383,7 +402,7 @@ We may release future updates so it will overwrite this file. it's better and sa
             $('body').append( googleAPI );
         }
 
-        
+
         /* 12: Back to top button
         ==============================================*/
 
@@ -414,7 +433,7 @@ We may release future updates so it will overwrite this file. it's better and sa
             });
         }
 
-        
+
         /* 13: Increase/Decrease Product quantity
         ==============================================*/
 
@@ -442,11 +461,11 @@ We may release future updates so it will overwrite this file. it's better and sa
             var imgID = $img.attr('id');
             var imgClass = $img.attr('class');
             var imgURL = $img.attr('src');
-        
+
             jQuery.get(imgURL, function(data) {
                 // Get the SVG tag, ignore the rest
                 var $svg = jQuery(data).find('svg');
-        
+
                 // Add replaced image's ID to the new SVG
                 if(typeof imgID !== 'undefined') {
                     $svg = $svg.attr('id', imgID);
@@ -455,18 +474,18 @@ We may release future updates so it will overwrite this file. it's better and sa
                 if(typeof imgClass !== 'undefined') {
                     $svg = $svg.attr('class', imgClass+' replaced-svg');
                 }
-        
+
                 // Remove any invalid XML tags as per http://validator.w3.org
                 $svg = $svg.removeAttr('xmlns:a');
-                
+
                 // Check if the viewport is set, else we gonna set it if we can.
                 if(!$svg.attr('viewBox') && $svg.attr('height') && $svg.attr('width')) {
                     $svg.attr('viewBox', '0 0 ' + $svg.attr('height') + ' ' + $svg.attr('width'));
                 }
-        
+
                 // Replace image with new SVG
                 $img.replaceWith($svg);
-        
+
             }, 'xml');
         });
 
@@ -496,13 +515,13 @@ We may release future updates so it will overwrite this file. it's better and sa
         }
 
         pageItemHeight();
-        
+
         $(window).resize( function(){
             pageItemHeight();
         });
     });
 
-        
+
     /* 17: Isotope for Blog
     ==============================================*/
 
@@ -512,7 +531,7 @@ We may release future updates so it will overwrite this file. it's better and sa
         });
     });
 
-    
+
     /* 18: Preloader
     ==============================================*/
 
