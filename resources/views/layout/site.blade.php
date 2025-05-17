@@ -59,7 +59,7 @@
                 <div class="col-xl-2 col-lg-2 col-md-4 col-sm-6 d-none d-sm-block">
                     <!-- Header Call -->
                     <div class="header-call text-right">
-                       <a href="/contact-us"> <span>Contact Us</span> </a>
+                       <a href="/contact-us" > <span style="color: #60c2a4!important;">Contact Us</span> </a>
                     </div>
                 </div>
             </div>

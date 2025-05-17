@@ -88,11 +88,12 @@
                         <p>{{      $service->little_description }}</p>
                         <p>{!! $service->description !!}</p>
 
-                        <a href="/services" class="back-btn"><i class="fa fa-arrow-circle-left"></i> Back to all services</a>
+                        <a href="/services" class="back-btn" style="color: #60c2a4!important;"> Back to all services</a>
                     </div>
                 </div>
             </div>
         </div>
+        <br>
     </section>
     <!-- End of Single Service -->
 

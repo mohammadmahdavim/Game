@@ -1,67 +1,6 @@
 @extends('layout.site')
 
-<style>
 
-    .portfolio-link {
-        display: inline-block;
-        margin: 15px 0;
-        font-weight: bold;
-        color: #007bff;
-        text-decoration: none;
-        transition: color 0.3s ease;
-    }
-
-    .portfolio-link:hover {
-        color: #0056b3;
-        text-decoration: underline;
-    }
-
-    .portfolio-single {
-        background: #fff;
-        padding: 40px;
-        border-radius: 12px;
-        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
-    }
-
-    .portfolio-single h2 {
-        font-size: 28px;
-        margin-bottom: 20px;
-    }
-
-    .portfolio-single .portfolio-icon-img {
-        width: 60px;
-        height: 60px;
-        object-fit: contain;
-        border-radius: 8px;
-        margin-bottom: 20px;
-    }
-
-    .portfolio-single i {
-        font-size: 48px;
-        color: #007bff;
-        margin-bottom: 20px;
-    }
-
-    .portfolio-single p {
-        font-size: 16px;
-        line-height: 1.7;
-        color: #444;
-    }
-
-    .back-btn {
-        margin-top: 30px;
-        display: inline-block;
-        color: #007bff;
-        text-decoration: none;
-        font-weight: bold;
-        transition: all 0.3s ease;
-    }
-
-    .back-btn:hover {
-        text-decoration: underline;
-        color: #0056b3;
-    }
-</style>
 
 @section('content')
 
@@ -114,13 +53,17 @@
                         <p>{{ $portfolio->little_description }}</p>
                         <p>{!! $portfolio->description !!}</p>
 
-                        <a href="/portfolios" class="back-btn"><i class="fa fa-arrow-circle-left"></i> Back to all
-                            portfolios</a>
+                        <a href="/portfolios" class="back-btn" style="color: #60c2a4 !important;">
+                            Back to all portfolios
+                        </a>
+
                     </div>
                 </div>
 
             </div>
         </div>
+
+<br>
     </section>
     <!-- End of Single Service -->
 

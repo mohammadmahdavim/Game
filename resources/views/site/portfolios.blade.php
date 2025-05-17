@@ -73,7 +73,7 @@
                         <a href="/portfolio/{{$service->id}}" class="single-service text-center service-card"
                            data-animate="fadeInUp" data-delay=".1">
                             <div class="service-icon mb-3">
-                                <img style="width: 550!important;height: 228!important;"
+                                <img style="width: 330!important;height: 330!important;"
                                      @if($service->image)
                                          src="{{ asset($service->image)}}"
                                      @else src="site/img/products/product3.jpg"

@@ -18,7 +18,7 @@
 
                 <div class="mb-3">
                     <label class="form-label">Testimonial</label>
-                    <textarea name="testimonial" class="form-control">{{ old('testimonial', $testimonial->testimonial ?? '') }}</textarea>
+                    <textarea name="testimonial" class="form-control" id="editor">{{ old('testimonial', $testimonial->testimonial ?? '') }}</textarea>
                 </div>
 
                 <div class="mb-3">
