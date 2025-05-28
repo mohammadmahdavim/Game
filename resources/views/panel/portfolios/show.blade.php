@@ -8,7 +8,7 @@
             </div>
             <div class="card-body">
                 <p><strong>Short Description:</strong> {{ $portfolio->short_description }}</p>
-                <p><strong>Description:</strong> {{ $portfolio->description }}</p>
+                <p><strong>Description:</strong> {!! $portfolio->description !!} }</p>
                 @if($portfolio->link)
                     <p><strong>Link:</strong> <a href="{{ $portfolio->link }}" target="_blank">{{ $portfolio->link }}</a></p>
                 @endif

@@ -31,7 +31,7 @@
                     <div class="number-one-content" data-animate="fadeInUp" data-delay=".5">
                         <h2 class="mb-3">About Us</h2>
                         <p>
-                            {{$about->description}}
+                            {!! $about->description !!}
                         </p>
                     </div>
                 </div>

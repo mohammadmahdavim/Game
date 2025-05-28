@@ -15,7 +15,7 @@
 
                 <div class="mb-3">
                     <label class="form-label fw-bold">Description:</label>
-                    <p class="form-control-plaintext">{{ $service->description }}</p>
+                    <p class="form-control-plaintext">{!! $service->description !!}</p>
                 </div>
 
                 @if($service->icon)

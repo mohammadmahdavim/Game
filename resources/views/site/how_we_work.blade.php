@@ -31,7 +31,7 @@
                     <div class="number-one-content" data-animate="fadeInUp" data-delay=".5">
                         <h2 class="mb-3">How We Wrok</h2>
                         <p>
-                            {{$how->description}}
+                            {!! $how->description !!}
                         </p>
                     </div>
                 </div>
